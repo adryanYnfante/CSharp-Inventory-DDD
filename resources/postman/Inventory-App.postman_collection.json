@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "f59bdbe2-bcc4-43d6-a054-6db4f1fbddaa",
+		"name": "Inventory-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24275262"
+	},
+	"item": [
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "Post/Create-Invoice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdType\": \"CC\",\r\n    \"IdClient\": \"1117852963\",\r\n    \"InvoiceDetails\": [\r\n        {\r\n            \"ProductId\": 1,\r\n            \"Quantity\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/invoice",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch/Cancel-Invoice",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/invoice/cancel/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"invoice",
+								"cancel",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get/All-Enabled-Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/product",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get/All-Products-Paging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/product/paging/?PageNumber=1&PageSize=2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"paging",
+								""
+							],
+							"query": [
+								{
+									"key": "PageNumber",
+									"value": "1"
+								},
+								{
+									"key": "PageSize",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get/Product-By-Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/product/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post/Create-product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Xiaomi Note 10\",\r\n    \"Enabled\": true,\r\n    \"InInventory\": 5,\r\n    \"MinUnits\" : 5,\r\n    \"MaxUnits\" : 100,\r\n    \"Price\": 477.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/product",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put/Update-Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Xiaomi 11\",\r\n    \"Enabled\": true,\r\n    \"InInventory\": 20,\r\n    \"MinUnits\" : 5,\r\n    \"MaxUnits\" : 100,\r\n    \"Price\": 577.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/product/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch/Disable-Product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/product/disable/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"disable",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Record",
+			"item": [
+				{
+					"name": "Get/All-invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/record",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"record"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get/Invoice-By-Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/record/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"record",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get/Invoice-By-Client-Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/record/client/1117852963",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"record",
+								"client",
+								"1117852963"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://localhost:7133",
+			"type": "string"
+		}
+	]
+}
